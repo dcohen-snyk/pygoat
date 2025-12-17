@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: snyk/actions/setup@master
       - name: Install Python dependencies with Pip
-        run: pip install -r dockerized_labs/broken_auth_lab/requirements.txt
+        run: sudo pip install -r dockerized_labs/broken_auth_lab/requirements.txt
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.12@master
         env:
