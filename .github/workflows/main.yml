@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Install Dependencies
+        run: |
+          pip install -r dockerized_labs/broken_auth_lab/requirements.txt
+          pip install -r dockerized_labs/insec_des_lab/requirements.txt
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.12@master
         env:
